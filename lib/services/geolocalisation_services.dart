@@ -29,6 +29,6 @@ class GeoLocationServices {
     locationData = await location.getLocation();
     debugPrint(
         "------UserLocation got------------lat: ${locationData!.latitude} long: ${locationData!.longitude}");
-    return CameraPosition(target: LatLng(locationData!.latitude!, locationData!.longitude!), zoom: 14);
+    return CameraPosition(target: LatLng(locationData!.latitude!, locationData!.longitude!), zoom: 0);
   }
 }

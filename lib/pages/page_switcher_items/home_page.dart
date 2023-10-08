@@ -26,7 +26,7 @@ class HomePageState extends State<HomePage> {
     setState(() {});
   }
 
-  static const CameraPosition _redStar = CameraPosition(target: LatLng(6.371014, 2.410017), zoom: 14);
+  static const CameraPosition _redStar = CameraPosition(target: LatLng(6.371014, 2.410017), zoom: 0);
 
   @override
   Widget build(BuildContext context) {
@@ -40,11 +40,7 @@ class HomePageState extends State<HomePage> {
                   children: [
                     GoogleMap(
                       // markers: getMarkers(selectedCategory),
-                      polygons: {
-                        const Polygon(
-                          polygonId: PolygonId("PolygonId"),
-                        )
-                      },
+                      mapType: MapType.satellite,
                       zoomControlsEnabled: false,
                       initialCameraPosition: actualPosition ?? _redStar,
                       onMapCreated: (e) => determinePosition(e),
