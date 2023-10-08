@@ -1,6 +1,6 @@
 import 'package:aqua_explore/pages/page_switcher_items/profil_page.dart';
 import 'package:aqua_explore/utils/theme.dart';
-import 'package:aqua_explore/widgets/Small_river_widget.dart';
+import 'package:aqua_explore/widgets/small_river_widget.dart';
 import 'package:aqua_explore/widgets/custom_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animated_dialog/flutter_animated_dialog.dart';
