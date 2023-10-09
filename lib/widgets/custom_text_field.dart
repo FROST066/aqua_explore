@@ -2,8 +2,9 @@ import 'package:aqua_explore/utils/theme.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField({super.key, required this.label, this.controller});
+  const CustomTextField({super.key, required this.label, this.labelColor, this.controller});
   final String label;
+  final Color? labelColor;
   final TextEditingController? controller;
 
   @override
@@ -15,9 +16,9 @@ class CustomTextField extends StatelessWidget {
           padding: const EdgeInsets.only(left: 8),
           child: Text(
             "$label :",
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 15,
-              color: primaryBlue,
+              color: labelColor ?? primaryBlue,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -40,8 +41,9 @@ class CustomTextField extends StatelessWidget {
 }
 
 class CustomPasswordTextField extends StatefulWidget {
-  CustomPasswordTextField({super.key, this.label, this.controller});
-  String? label;
+  const CustomPasswordTextField({super.key, this.label, this.labelColor, this.controller});
+  final String? label;
+  final Color? labelColor;
   final TextEditingController? controller;
 
   @override
@@ -59,9 +61,9 @@ class _CustomPasswordTextFieldState extends State<CustomPasswordTextField> {
           padding: const EdgeInsets.only(left: 8),
           child: Text(
             "${widget.label ?? "Password"} :",
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 15,
-              color: primaryBlue,
+              color: widget.labelColor ?? primaryBlue,
               fontWeight: FontWeight.bold,
             ),
           ),

@@ -1,9 +1,7 @@
 import 'package:aqua_explore/pages/page_switcher_items/profil_page.dart';
 import 'package:aqua_explore/utils/theme.dart';
-import 'package:aqua_explore/widgets/small_river_widget.dart';
 import 'package:aqua_explore/widgets/custom_bottom_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animated_dialog/flutter_animated_dialog.dart';
 import 'page_switcher_items/chase_page.dart';
 import 'page_switcher_items/home_page.dart';
 import 'page_switcher_items/learn_page.dart';
@@ -20,7 +18,12 @@ class _PageSwitcherState extends State<PageSwitcher> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBody: true,
-      body: const [HomePage(), LearnPage(), ChasePage(), ProfilPage()][_selectedIndex],
+      body: const [
+        HomePage(),
+        LearnPage(),
+        ChasePage(),
+        ProfilPage(),
+      ][_selectedIndex],
       bottomNavigationBar: CustomBottomBar(
         selectedIndex: _selectedIndex,
         onChanged: (e) => setState(() => _selectedIndex = e),

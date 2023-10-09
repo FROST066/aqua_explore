@@ -10,6 +10,10 @@ class LearnPage extends StatefulWidget {
 class _LearnPageState extends State<LearnPage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: Center(
+        child: Container(color: Colors.red, height: 100, width: 100),
+      ),
+    );
   }
 }

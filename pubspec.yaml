@@ -36,12 +36,11 @@ dependencies:
   cupertino_icons: ^1.0.2
   get: ^4.6.5
   get_storage: ^2.1.1
-  # google_nav_bar: ^5.0.6
   flutter_svg: ^2.0.5
   google_maps_flutter: ^2.3.0
   location: ^5.0.3
   flutter_animated_dialog: ^2.0.1
-  # google_fonts: ^4.0.4
+  custom_info_window: ^1.0.1
 
 dev_dependencies:
   flutter_test:
@@ -70,6 +69,7 @@ flutter:
     - assets/svg/
     - assets/images/species/
     - assets/images/markers/
+    - assets/images/numberMarkers/
   #   - images/a_dot_ham.jpeg
 
   fonts:

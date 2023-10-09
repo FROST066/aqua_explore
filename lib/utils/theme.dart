@@ -25,15 +25,13 @@ final appTheme = ThemeData(
   scaffoldBackgroundColor: Colors.white,
   inputDecorationTheme:
       const InputDecorationTheme(hintStyle: TextStyle(fontFamily: "CenturyGothic", fontSize: 13)),
-  textTheme: const TextTheme(
-      bodyMedium: TextStyle(
-    fontFamily: "CenturyGothic",
-  )),
+  textTheme: const TextTheme(bodyMedium: TextStyle(fontFamily: "CenturyGothic")),
   appBarTheme: const AppBarTheme(
     elevation: 0,
     foregroundColor: primaryBlue,
     backgroundColor: Colors.transparent,
-    titleTextStyle: TextStyle(fontFamily: "CenturyGothic", fontSize: 18, fontWeight: FontWeight.bold),
+    titleTextStyle:
+        TextStyle(fontFamily: "CenturyGothic", fontSize: 18, fontWeight: FontWeight.bold, color: primaryBlue),
   ),
 );
 const Color primaryBlue = Color(0xFF01618A);
