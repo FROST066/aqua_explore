@@ -2,6 +2,7 @@ import 'package:aqua_explore/pages/page_switcher.dart';
 import 'package:aqua_explore/utils/theme.dart';
 import 'package:aqua_explore/widgets/app_button.dart';
 import 'package:aqua_explore/widgets/custom_text_field.dart';
+import 'package:aqua_explore/widgets/user_type_selector.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -17,6 +18,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: AppBar(),
       body: Center(
         child: SingleChildScrollView(
@@ -24,8 +26,9 @@ class _LoginPageState extends State<LoginPage> {
             width: MediaQuery.of(context).size.width * .9,
             child: Column(
               children: [
+                const SizedBox(height: 10),
                 Image.asset("assets/images/main_logo_blue.png"),
-                const SizedBox(height: 40),
+                const SizedBox(height: 20),
                 const Text(
                   "Sign in",
                   style: TextStyle(fontSize: 21, color: secondaryOrange, fontWeight: FontWeight.bold),
@@ -36,6 +39,7 @@ class _LoginPageState extends State<LoginPage> {
                   width: 60,
                   height: 2.5,
                 ),
+                const UserTypeSelector(),
                 const SizedBox(height: 33),
                 const CustomTextField(label: "E-mail"),
                 const SizedBox(height: 15),

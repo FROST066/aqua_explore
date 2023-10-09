@@ -2,7 +2,9 @@ import 'package:aqua_explore/pages/auth/change_email.dart';
 import 'package:aqua_explore/pages/auth/change_password.dart';
 import 'package:aqua_explore/utils/theme.dart';
 import 'package:aqua_explore/widgets/custom_switch.dart';
+import 'package:aqua_explore/widgets/language_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animated_dialog/flutter_animated_dialog.dart';
 import 'package:get/get.dart';
 
 class ProfilPage extends StatefulWidget {
@@ -33,7 +35,7 @@ class _ProfilPageState extends State<ProfilPage> {
           child: Column(
             children: [
               Expanded(
-                flex: 4,
+                flex: 3,
                 child: Center(
                   child: Stack(
                     alignment: Alignment.center,
@@ -43,11 +45,11 @@ class _ProfilPageState extends State<ProfilPage> {
                           constraints: const BoxConstraints(
                             maxHeight: 250,
                             maxWidth: 250,
-                            minWidth: 135,
-                            minHeight: 135,
+                            minWidth: 130,
+                            minHeight: 130,
                           ),
-                          height: MediaQuery.of(context).size.width * 0.32,
-                          width: MediaQuery.of(context).size.width * 0.32,
+                          height: MediaQuery.of(context).size.width * 0.3,
+                          width: MediaQuery.of(context).size.width * 0.3,
                           clipBehavior: Clip.hardEdge,
                           decoration: const BoxDecoration(shape: BoxShape.circle),
                           child: Image.asset("assets/images/profile_image.png", fit: BoxFit.cover)),
@@ -81,14 +83,23 @@ class _ProfilPageState extends State<ProfilPage> {
                           children: const [Text("Notifications"), CustomSwitch()],
                         ),
                         Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 20),
+                          padding: const EdgeInsets.symmetric(vertical: 25),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: const [
-                              Text("Language"),
-                              Text(
-                                "Default",
-                                style: TextStyle(color: Color(0xFFD9D9D9)),
+                            children: [
+                              const Text("Language"),
+                              GestureDetector(
+                                onTap: () => showAnimatedDialog(
+                                    duration: const Duration(seconds: 1),
+                                    animationType: DialogTransitionType.fadeScale,
+                                    context: Get.context!,
+                                    barrierDismissible: true,
+                                    curve: Curves.decelerate,
+                                    builder: (context) => const LanguagePickerDialog()),
+                                child: const Text(
+                                  "Default",
+                                  style: TextStyle(color: Color(0xFFD9D9D9)),
+                                ),
                               )
                             ],
                           ),
@@ -99,7 +110,7 @@ class _ProfilPageState extends State<ProfilPage> {
                             transition: Transition.rightToLeft,
                           ),
                           child: Padding(
-                            padding: const EdgeInsets.only(bottom: 20),
+                            padding: const EdgeInsets.only(bottom: 25),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: const [Text("Change password")],

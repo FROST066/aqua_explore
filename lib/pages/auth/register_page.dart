@@ -1,6 +1,7 @@
 import 'package:aqua_explore/utils/theme.dart';
 import 'package:aqua_explore/widgets/app_button.dart';
 import 'package:aqua_explore/widgets/custom_text_field.dart';
+import 'package:aqua_explore/widgets/user_type_selector.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -18,15 +19,17 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(backgroundColor: Colors.transparent),
       body: Center(
         child: SingleChildScrollView(
           child: SizedBox(
             width: MediaQuery.of(context).size.width * .9,
             child: Column(
               children: [
+                const SizedBox(height: 10),
                 Image.asset("assets/images/main_logo_blue.png"),
-                const SizedBox(height: 40),
+                const SizedBox(height: 20),
                 const Text(
                   "Sign up",
                   style: TextStyle(fontSize: 21, color: secondaryOrange, fontWeight: FontWeight.bold),
@@ -37,12 +40,13 @@ class _RegisterPageState extends State<RegisterPage> {
                   width: 60,
                   height: 2.5,
                 ),
+                const UserTypeSelector(),
                 const SizedBox(height: 33),
                 const CustomTextField(label: "E-mail"),
                 const SizedBox(height: 15),
-                CustomPasswordTextField(),
+                const CustomPasswordTextField(),
                 const SizedBox(height: 15),
-                CustomPasswordTextField(label: "Confirm password"),
+                const CustomPasswordTextField(label: "Confirm password"),
                 const SizedBox(height: 15),
                 Row(
                   children: [
