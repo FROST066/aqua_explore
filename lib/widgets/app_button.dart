@@ -7,8 +7,9 @@ class AppButton extends StatelessWidget {
       required this.foregroundColor,
       required this.backgroundColor,
       required this.onPressed,
+      this.textFontSize,
       required this.text});
-
+  final double? textFontSize;
   final Color foregroundColor;
   final Color backgroundColor;
   final void Function()? onPressed;
@@ -29,7 +30,7 @@ class AppButton extends StatelessWidget {
         child: Center(
           child: Text(
             text,
-            style: const TextStyle(fontSize: 15.8),
+            style: TextStyle(fontSize: textFontSize ?? 15.8),
           ),
         ),
       ),
@@ -48,11 +49,12 @@ class AppButtonWithoutBackground extends StatelessWidget {
     return SizedBox(
       // width: MediaQuery.of(context).size.width * .85,
       child: ElevatedButton(
-        onPressed: onPressed,
+        onPressed: onPressed ?? () {},
         style: ElevatedButton.styleFrom(
           maximumSize: const Size.fromWidth(500),
           fixedSize: const Size.fromHeight(45),
           elevation: 0,
+          // visualDensity: VisualDensity.compact,
           backgroundColor: Colors.transparent,
           foregroundColor: foregroundColor ?? primaryBlue,
           shape: RoundedRectangleBorder(
