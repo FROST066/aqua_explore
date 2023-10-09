@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:aqua_explore/services/geolocalisation_services.dart';
 import 'package:aqua_explore/utils/theme.dart';
-import 'package:aqua_explore/widgets/Small_river_widget.dart';
+import 'package:aqua_explore/widgets/small_river_widget.dart';
 import 'package:aqua_explore/widgets/app_button.dart';
 // import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
