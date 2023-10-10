@@ -68,14 +68,15 @@ class CustomBottomBar extends StatelessWidget {
 }
 
 class CustomBottomBarItem extends StatelessWidget {
-  CustomBottomBarItem(
-      {super.key,
-      this.foregroundColor = Colors.white,
-      this.backgroundColor = primaryBlue,
-      required this.actived,
-      required this.text,
-      this.child,
-      this.asset});
+  CustomBottomBarItem({
+    super.key,
+    this.foregroundColor = Colors.white,
+    this.backgroundColor = primaryBlue,
+    required this.actived,
+    required this.text,
+    this.child,
+    this.asset,
+  });
   final String text;
   final String? asset;
   final Widget? child;

@@ -62,6 +62,9 @@ class HomePageState extends State<HomePage> {
           GoogleMap(
             markers: markers,
             mapType: MapType.satellite,
+            // myLocationButtonEnabled: true,
+            // myLocationEnabled: true,
+            // padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * .1),
             zoomControlsEnabled: false,
             initialCameraPosition: actualPosition ?? _redStar,
             onMapCreated: (e) => determinePosition(e),
