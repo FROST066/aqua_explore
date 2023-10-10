@@ -1,8 +1,6 @@
-import 'package:aqua_explore/pages/quizz_page_items/on_questionning_page.dart';
 import 'package:aqua_explore/utils/theme.dart';
 import 'package:aqua_explore/widgets/app_button.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class OnStartQuizzPage extends StatefulWidget {
   const OnStartQuizzPage({super.key, required this.controller});
